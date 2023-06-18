@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>I Love You</title>
+    <style>
+        /* CSS for page styling */
+        body {
+            background-color: #fde5e8;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        #love-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            color: #e91e63;
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        p {
+            font-size: 24px;
+            color: #333333;
+            line-height: 1.5;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+        
+        .love-button {
+            display: inline-block;
+            background-color: #e91e63;
+            color: #ffffff;
+            font-size: 18px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .love-button:hover {
+            background-color: #c2185b;
+        }
+        
+        .love-button:active {
+            background-color: #ad1457;
+        }
+        
+        .love-message {
+            opacity: 0;
+            margin-top: 20px;
+            transform: translateY(-50px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+        
+        .love-theme {
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .love-theme p {
+            font-style: italic;
+            color: #9c27b0;
+            margin-bottom: 10px;
+        }
+        
+        .love-theme h2 {
+            color: #e91e63;
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .love-theme .love-image {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        
+        .love-animation {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url(love-animation.gif) no-repeat center center;
+            background-size: cover;
+            z-index: -1;
+            animation: rotateAnimation 10s linear infinite;
+        }
+        
+        @keyframes rotateAnimation {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Additional CSS Animations */
+        @keyframes scaleAnimation {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        
+        .love-message p {
+            font-size: 32px;
+            animation: scaleAnimation 2s infinite;
+        }
+
+        /* Emoji Styling */
+        .love-emoji {
+            font-size: 48px;
+            margin: 10px;
+        }
+    </style>
+    <script>
+        // JavaScript for displaying and hiding the love message
+        function displayLoveMessage() {
+            var loveMessageElement = document.getElementById("love-message");
+            var loveAnimationElement = document.getElementById("love-animation");
+            var loveButton = document.querySelector(".love-button");
+            var romanticMusicElement = document.getElementById("romantic-music");
+            
+            // Show animation
+            loveAnimationElement.style.display = "block";
+            
+            // Hide love button
+            loveButton.style.display = "none";
+            
+            // Wait for animation to complete
+            setTimeout(function() {
+                // Show love message with animation
+                loveMessageElement.style.opacity = "1";
+                loveMessageElement.style.transform = "translateY(0)";
+                
+                // Scroll to the love message
+                window.scrollTo({
+                    top: loveMessageElement.offsetTop,
+                    behavior: 'smooth'
+                });
+                
+                // Play romantic music
+                romanticMusicElement.play();
+            }, 2000); // Adjust delay according to the animation duration
+        }
+    </script>
+</head>
+<body>
+    <div id="love-container">
+        <div class="love-theme">
+            <h2>Love is in the Air!</h2>
+            <img class="love-image" >
+            <p>Every day spent with you is a blessing. You fill my life with happiness and make me believe in the power of love. You are the missing piece of my heart, and I am grateful for your presence in my life.</p>
+        </div>
+        
+        <h1>I Love You</h1>
+        
+        <p>
+            My dearest,<br><br>
+            Words cannot fully express the depth of my emotions, but I want you to know that I love you with all my heart and soul. You are the light that illuminates my path, the joy that fills my days, and the reason behind my smile. With every beat of my heart, my love for you grows stronger and more profound. I cherish the moments we share and the bond we have. You are my everything, and I am forever grateful to have you in my life. ❤️<br><br>
+            Love always,<br>
+            [Your Love]
+        </p>
+        
+        <a class="love-button" href="javascript:void(0)" onclick="displayLoveMessage()">Click to Reveal</a>
+        
+        <div id="love-message" class="love-message">
+            <p>I Love You! ❤️</p>
+        </div>
+        
+        <div id="love-animation" class="love-animation"></div>
+    </div>
+    
+    <audio id="romantic-music" src="your-song-file.mp3" loop></audio>
+
+    <!-- Emoji Library -->
+    <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
+    <script>
+        // Replace emojis with Twemoji images
+        twemoji.parse(document.body);
+    </script>
+</body>
+</html>
