@@ -3,18 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>আমি তোমায় ভালোবাসি, আমার তন্নী </title>
+    <title>আমি তোমায় ভালোবাসি, আমার তন্নী</title>
     <style>
         /* CSS for page styling */
         body {
-            background-image: url('background.jpg'); /* Replace with your background image */
-            background-size: cover;
-            background-attachment: fixed;
             font-family: 'Arial', sans-serif;
             text-align: center;
             padding: 10px;
             margin: 0;
             color: #fff;
+            background-image: url('background1.jpg'); /* Default background image */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            transition: background-image 1s ease;
         }
 
         #love-container {
@@ -99,8 +101,6 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('love-animation.gif'); /* Replace with your animation */
-            background-size: cover;
             z-index: -1;
             animation: rotateAnimation 10s linear infinite;
         }
@@ -133,32 +133,42 @@
         // JavaScript for displaying and hiding the love message
         function displayLoveMessage() {
             var loveMessageElement = document.getElementById("love-message");
-            var loveAnimationElement = document.getElementById("love-animation");
             var loveButton = document.querySelector(".love-button");
             var romanticMusicElement = document.getElementById("romantic-music");
-
-            // Show animation
-            loveAnimationElement.style.display = "block";
 
             // Hide love button
             loveButton.style.display = "none";
 
-            // Wait for animation to complete
-            setTimeout(function () {
-                // Show love message with animation
-                loveMessageElement.style.opacity = "1";
-                loveMessageElement.style.transform = "translateY(0)";
+            // Show love message
+            loveMessageElement.style.opacity = "1";
+            loveMessageElement.style.transform = "translateY(0)";
 
-                // Scroll to the love message
-                window.scrollTo({
-                    top: loveMessageElement.offsetTop,
-                    behavior: 'smooth'
-                });
+            // Scroll to the love message
+            window.scrollTo({
+                top: loveMessageElement.offsetTop,
+                behavior: 'smooth'
+            });
 
-                // Play romantic music
-                romanticMusicElement.play();
-            }, 2000); // Adjust delay according to the animation duration
+            // Play romantic music
+            romanticMusicElement.play();
         }
+
+        // Array of background images
+        const backgroundImages = [
+            'background1.jpg',
+            'background2.jpg',
+            'background3.jpg'
+            // Add more image URLs here
+        ];
+
+        // Function to change background image randomly
+        function changeBackground() {
+            const randomIndex = Math.floor(Math.random() * backgroundImages.length);
+            document.body.style.backgroundImage = `url(${backgroundImages[randomIndex]})`;
+        }
+
+        // Change the background every 10 seconds
+        setInterval(changeBackground, 10000); // 10 seconds in milliseconds
     </script>
 </head>
 <body>
@@ -172,7 +182,7 @@
     <h1>আমি তোমায় ভালোবাসি</h1>
 
     <p>
-        আমার প্রিয় তন্নী,<br></br>
+        আমার প্রিয় তন্নী,<br><br>
         শব্দ সম্পূর্ণভাবে আমার ভাবনার গভীরতা প্রকাশ করতে পারে না, তবে আমি চাই যে, আমি তোমায় আমার সম্পূর্ণ হৃদয় এবং আত্মা
     </p>
 
@@ -183,16 +193,15 @@
         <p>আপনি আমার সুখ</p>
     </div>
 
-    <div id="love-animation" class="love-animation"></div>
+    <!-- Audio file for romantic music -->
+    <audio id="romantic-music" src="your-song-file.mp3" loop></audio>
+
+    <!-- Emoji Library -->
+    <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
+    <script>
+        // Replace emojis with Twemoji images
+        twemoji.parse(document.body);
+    </script>
 </div>
-
-<audio id="romantic-music" src="your-song-file.mp3" loop></audio>
-
-<!-- Emoji Library -->
-<script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
-<script>
-    // Replace emojis with Twemoji images
-    twemoji.parse(document.body);
-</script>
 </body>
 </html>
