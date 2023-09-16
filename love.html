@@ -164,7 +164,196 @@
     <h1>আমি তোমায় ভালোবাসি</h1>
 
     <p>
-        আমার প্রিয় তন্নী,br><br>
+        আমার প্রিয় <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>আমি তোমায় ভালোবাসি, আমার তন্নী </title>
+    <style>
+        /* CSS for page styling */
+        body {
+            background-color: #fde5e8;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 10px;
+        }
+
+        #love-container {
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: #e91e63;
+            font-size: 32px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        p {
+            font-size: 18px;
+            color: #333333;
+            line-height: 1.5;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        .love-button {
+            display: inline-block;
+            background-color: #e91e63;
+            color: #ffffff;
+            font-size: 16px;
+            padding: 8px 16px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .love-button:hover {
+            background-color: #c2185b;
+        }
+
+        .love-button:active {
+            background-color: #ad1457;
+        }
+
+        .love-message {
+            opacity: 0;
+            margin-top: 10px;
+            transform: translateY(-20px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+
+        .love-theme {
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .love-theme p {
+            font-style: italic;
+            color: #9c27b0;
+            margin-bottom: 10px;
+        }
+
+        .love-theme h2 {
+            color: #e91e63;
+            font-size: 20px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .love-theme .love-image {
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+        .love-animation {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url(love-animation.gif) no-repeat center center;
+            background-size: cover;
+            z-index: -1;
+            animation: rotateAnimation 10s linear infinite;
+        }
+
+        /* Additional CSS Animations */
+        @keyframes scaleAnimation {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .love-message p {
+            font-size: 24px;
+            animation: scaleAnimation 2s infinite;
+        }
+
+        /* Emoji Styling */
+        .love-emoji {
+            font-size: 32px;
+            margin: 10px;
+        }
+    </style>
+    <script>
+        // JavaScript for displaying and hiding the love message
+        function displayLoveMessage() {
+            var loveMessageElement = document.getElementById("love-message");
+            var loveAnimationElement = document.getElementById("love-animation");
+            var loveButton = document.querySelector(".love-button");
+            var romanticMusicElement = document.getElementById("romantic-music");
+
+            // Show animation
+            loveAnimationElement.style.display = "block";
+
+            // Hide love button
+            loveButton.style.display = "none";
+
+            // Wait for animation to complete
+            setTimeout(function () {
+                // Show love message with animation
+                loveMessageElement.style.opacity = "1";
+                loveMessageElement.style.transform = "translateY(0)";
+
+                // Scroll to the love message
+                window.scrollTo({
+                    top: loveMessageElement.offsetTop,
+                    behavior: 'smooth'
+                });
+
+                // Play romantic music
+                romanticMusicElement.play();
+            }, 2000); // Adjust delay according to the animation duration
+        }
+    </script>
+</head>
+<body>
+<div id="love-container">
+    <div class="love-theme">
+        <h2>আকাশে ভালোবাসা!</h2>
+        <img class="love-image">
+        <p>আপনির সাথে যে প্রতিদিন যাই, তা আমার জন্য একটি আশীর্বাদ। আপনি আমার জীবনে সুখ নিয়ে আসেন এবং আমাকে ভালোবাসার শক্তিতে বিশ্বাস করতে দেয়।</p>
+    </div>
+
+    <h1>আমি তোমায় ভালোবাসি</h1>
+
+    <p>
+        আমার প্রিয় তন্নী,<br><br>
+        শব্দ সম্পূর্ণভাবে আমার ভাবনার গভীরতা প্রকাশ করতে পারে না, তবে আমি চাই যে, আমি তোমায় আমার সম্পূর্ণ হৃদয় এবং আত্মা
+    </p>
+
+    <a class="love-button" href="javascript:void(0)" onclick="displayLoveMessage()">প্রকাশ করতে ক্লিক করুন</a>
+
+    <div id="love-message" class="love-message">
+        <p>আমি তোমায় ভালোবাসি! ❤️</p>
+        <p>আপনি আমার সুখ</p>
+    </div>
+
+    <div id="love-animation" class="love-animation"></div>
+</div>
+
+<audio id="romantic-music" src="your-song-file.mp3" loop></audio>
+
+<!-- Emoji Library -->
+<script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
+<script>
+    // Replace emojis with Twemoji images
+    twemoji.parse(document.body);
+</script>
+</body>
+</html> <br><br>
         শব্দ সম্পূর্ণভাবে আমার ভাবনার গভীরতা প্রকাশ করতে পারে না, তবে আমি চাই যে, আমি তোমায় আমার সম্পূর্ণ হৃদয় এবং আত্মা
     </p>
 
