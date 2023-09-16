@@ -3,41 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>আমি তোমায় ভালোবাসি, আমার তন্নী</title>
+    <title>আমি তোমায় ভালোবাসি, আমার  হাবিবা তন্নি</title>
     <style>
         /* CSS for page styling */
         body {
-            font-family: 'Arial', sans-serif;
+            background-color: #fde5e8;
+            font-family: Arial, sans-serif;
             text-align: center;
             padding: 10px;
-            margin: 0;
-            color: #fff;
-            background-image: url('background1.jpg'); /* Default background image */
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            transition: background-image 1s ease;
         }
 
         #love-container {
             max-width: 100%;
             margin: 0 auto;
-            background-color: rgba(255, 255, 255, 0.8);
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
         }
 
         h1 {
             color: #e91e63;
-            font-size: 36px;
+            font-size: 32px;
             margin-bottom: 20px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
 
         p {
-            font-size: 20px;
-            line-height: 1.6;
+            font-size: 18px;
+            color: #333333;
+            line-height: 1.5;
             text-align: justify;
             text-justify: inter-word;
         }
@@ -45,9 +36,9 @@
         .love-button {
             display: inline-block;
             background-color: #e91e63;
-            color: #fff;
-            font-size: 18px;
-            padding: 10px 20px;
+            color: #ffffff;
+            font-size: 16px;
+            padding: 8px 16px;
             border-radius: 5px;
             text-decoration: none;
             transition: background-color 0.3s ease;
@@ -64,35 +55,34 @@
 
         .love-message {
             opacity: 0;
-            margin-top: 20px;
+            margin-top: 10px;
             transform: translateY(-20px);
             transition: opacity 1s ease, transform 1s ease;
         }
 
         .love-theme {
-            background-color: rgba(255, 255, 255, 0.9);
+            background-color: #ffffff;
             border-radius: 10px;
-            padding: 20px;
+            padding: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
         }
 
         .love-theme p {
             font-style: italic;
             color: #9c27b0;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
         }
 
         .love-theme h2 {
             color: #e91e63;
-            font-size: 24px;
-            margin-bottom: 30px;
+            font-size: 20px;
+            margin-bottom: 20px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
 
         .love-theme .love-image {
             max-width: 100%;
             margin: 0 auto;
-            border-radius: 10px;
         }
 
         .love-animation {
@@ -101,6 +91,8 @@
             left: 0;
             width: 100%;
             height: 100%;
+            background: url(love-animation.gif) no-repeat center center;
+            background-size: cover;
             z-index: -1;
             animation: rotateAnimation 10s linear infinite;
         }
@@ -119,13 +111,13 @@
         }
 
         .love-message p {
-            font-size: 28px;
+            font-size: 24px;
             animation: scaleAnimation 2s infinite;
         }
 
         /* Emoji Styling */
         .love-emoji {
-            font-size: 48px;
+            font-size: 32px;
             margin: 10px;
         }
     </style>
@@ -133,56 +125,46 @@
         // JavaScript for displaying and hiding the love message
         function displayLoveMessage() {
             var loveMessageElement = document.getElementById("love-message");
+            var loveAnimationElement = document.getElementById("love-animation");
             var loveButton = document.querySelector(".love-button");
             var romanticMusicElement = document.getElementById("romantic-music");
+
+            // Show animation
+            loveAnimationElement.style.display = "block";
 
             // Hide love button
             loveButton.style.display = "none";
 
-            // Show love message
-            loveMessageElement.style.opacity = "1";
-            loveMessageElement.style.transform = "translateY(0)";
+            // Wait for animation to complete
+            setTimeout(function () {
+                // Show love message with animation
+                loveMessageElement.style.opacity = "1";
+                loveMessageElement.style.transform = "translateY(0)";
 
-            // Scroll to the love message
-            window.scrollTo({
-                top: loveMessageElement.offsetTop,
-                behavior: 'smooth'
-            });
+                // Scroll to the love message
+                window.scrollTo({
+                    top: loveMessageElement.offsetTop,
+                    behavior: 'smooth'
+                });
 
-            // Play romantic music
-            romanticMusicElement.play();
+                // Play romantic music
+                romanticMusicElement.play();
+            }, 2000); // Adjust delay according to the animation duration
         }
-
-        // Array of background images
-        const backgroundImages = [
-            'background1.jpg',
-            'background2.jpg',
-            'background3.jpg'
-            // Add more image URLs here
-        ];
-
-        // Function to change background image randomly
-        function changeBackground() {
-            const randomIndex = Math.floor(Math.random() * backgroundImages.length);
-            document.body.style.backgroundImage = `url(${backgroundImages[randomIndex]})`;
-        }
-
-        // Change the background every 10 seconds
-        setInterval(changeBackground, 10000); // 10 seconds in milliseconds
     </script>
 </head>
 <body>
 <div id="love-container">
     <div class="love-theme">
         <h2>আকাশে ভালোবাসা!</h2>
-        <img class="love-image" src="love-image.jpg" alt="Love Image"> <!-- Replace with your image -->
+        <img class="love-image">
         <p>আপনির সাথে যে প্রতিদিন যাই, তা আমার জন্য একটি আশীর্বাদ। আপনি আমার জীবনে সুখ নিয়ে আসেন এবং আমাকে ভালোবাসার শক্তিতে বিশ্বাস করতে দেয়।</p>
     </div>
 
     <h1>আমি তোমায় ভালোবাসি</h1>
 
     <p>
-        আমার প্রিয় তন্নী,<br><br>
+        আমার প্রিয় তন্নি,<br><br>
         শব্দ সম্পূর্ণভাবে আমার ভাবনার গভীরতা প্রকাশ করতে পারে না, তবে আমি চাই যে, আমি তোমায় আমার সম্পূর্ণ হৃদয় এবং আত্মা
     </p>
 
@@ -193,15 +175,16 @@
         <p>আপনি আমার সুখ</p>
     </div>
 
-    <!-- Audio file for romantic music -->
-    <audio id="romantic-music" src="your-song-file.mp3" loop></audio>
-
-    <!-- Emoji Library -->
-    <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
-    <script>
-        // Replace emojis with Twemoji images
-        twemoji.parse(document.body);
-    </script>
+    <div id="love-animation" class="love-animation"></div>
 </div>
+
+<audio id="romantic-music" src="your-song-file.mp3" loop></audio>
+
+<!-- Emoji Library -->
+<script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
+<script>
+    // Replace emojis with Twemoji images
+    twemoji.parse(document.body);
+</script>
 </body>
 </html>
